@@ -1,4 +1,4 @@
-package packStream;
+package packStream1;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -79,6 +79,15 @@ public class MainPerson {
         System.out.println();
         int sumaWiekow = list.stream().mapToInt(person -> person.getAge()).sum();
         System.out.println("Suma wieków osób z listy: " + sumaWiekow);
+
+        // - * uzyskaj średnią wieku wszystkich mężczyzn (average)
+        System.out.println();
+        OptionalDouble sredniaWiekuOD = list.stream().filter(person -> person.isMale()).mapToInt(person -> person.getAge())
+                .average();
+        if(sredniaWiekuOD.isPresent()) {
+            double sredniaWieku = sredniaWiekuOD.getAsDouble();
+            System.out.println("Srednia wieku mężczyzn: " + sredniaWieku);
+        }
 
         // czy jest osoba, która ma 100 lat?
         System.out.println();

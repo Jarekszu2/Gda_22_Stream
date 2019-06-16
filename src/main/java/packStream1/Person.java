@@ -1,4 +1,4 @@
-package packStream;
+package packStream1;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
